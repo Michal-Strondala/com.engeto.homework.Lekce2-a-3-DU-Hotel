@@ -18,6 +18,10 @@ public class Guest {
         this.surname = surname;
         this.dateOfBirth = dateOfBirth;
     }
+    public Guest(String name) {
+        this.name = name;
+
+    }
     //endregion
 
     //region Methods
@@ -50,9 +54,14 @@ public class Guest {
 
     @Override
     public String toString() {
+        if (dateOfBirth == null && surname == null) {
+            return name;
+        }
+
         return name + " " + surname + " (" + this.formatDate(dateOfBirth) + ")";
     }
 
+    //Metoda na zformátování data z anglického na české
     private String formatDate(LocalDate date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy", new Locale("cs", "CZ"));
         return date.format(formatter);

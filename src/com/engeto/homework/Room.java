@@ -19,22 +19,6 @@ public class Room {
         this.hasSeaView = hasSeaView;
         this.pricePerNight = pricePerNight;
     }
-//Návrhy konstruktorů, kde jsou pre-definovány dané vlastnosti:
-//    public Room(int roomNumber) {
-//        this.roomNumber = roomNumber;
-//        this.bedNumber = 1;
-//        this.hasBalcony = true;
-//        this.hasSeaView = true;
-//        this.pricePerNight = 1000;
-//    }
-//    public Room(int roomNumber, boolean hasBalcony) {
-//        this.roomNumber = roomNumber;
-//        this.bedNumber = 3;
-//        this.hasBalcony = false;
-//        this.hasSeaView = true;
-//        this.pricePerNight = 2400;
-//    }
-
     //endregion
 
     //region Methods
@@ -86,9 +70,9 @@ public class Room {
     public String toString() {
         return  "Pokoj číslo: " + roomNumber +
                 "\nPočet lůžek: " + bedNumber +
-                "\nBalkón: " + hasBalcony +
-                "\nVýhled na moře: " + hasSeaView +
-                "\nCena za noc: " + pricePerNight + "\n";
+                "\nBalkón: " + (hasBalcony ? "ANO" : "NE") +
+                "\nVýhled na moře: " + (hasSeaView ? "ANO" : "NE") +
+                "\nCena za noc: " + pricePerNight + " Kč" + "\n";
         }
     //endregion
     }
